@@ -18,12 +18,6 @@ public class User {
     public User() {
     }
 
-    public User(long id, String name, String surname, String phoneNumber) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.phoneNumber = phoneNumber;
-    }
 
     public long getId() {
         return id;
