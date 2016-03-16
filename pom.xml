@@ -6,7 +6,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring.data>1.3.4.RELEASE</spring.data>
         <spring.boot>1.3.3.RELEASE</spring.boot>
         <postgres.version>9.1-901-1.jdbc4</postgres.version>
         <!--<junit.version>4.11</junit.version>-->
@@ -50,15 +49,5 @@
 
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 
 </project>

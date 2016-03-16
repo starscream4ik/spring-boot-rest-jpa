@@ -18,7 +18,6 @@ import java.util.Properties;
 @Configuration
 @EnableJpaRepositories("com.levi.restboot.repository")
 @EnableTransactionManagement
-@PropertySource("classpath:application.properties")
 public class DataConfig {
 
     private static final String PROP_HIBERNATE_DIALECT = "hibernate.dialect";
