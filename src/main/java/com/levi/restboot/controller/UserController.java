@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> createUser(@RequestBody User user) {
 
         User createdUser = userService.createUser(user);
@@ -35,7 +35,7 @@ public class UserController {
         return new ResponseEntity<User>(createdUser, HttpStatus.CREATED);
     }
 
-    @RequestMapping(path = "/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         if (userService.getUserById(id) == null) {
             return new ResponseEntity<User>(HttpStatus.NOT_MODIFIED);

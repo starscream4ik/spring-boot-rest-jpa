@@ -61,7 +61,7 @@ public class UserControllerTest {
         //then
         verify(userService, times(1)).getAllUsers();
         result.andExpect(status().isOk());
-        result.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
+        result.andExpect(content().contentType(MediaType.APPLICATION_JSON));
         List usersFromResponse = new ObjectMapper().readValue(result.andReturn().getResponse().getContentAsByteArray(), List.class);
         Assert.assertEquals(usersFromResponse.size(), users.size());
     }
@@ -81,7 +81,7 @@ public class UserControllerTest {
         //then
         verify(userService, times(1)).getUserById(id);
         resultPositive.andExpect(status().isOk());
-        resultPositive.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
+        resultPositive.andExpect(content().contentType(MediaType.APPLICATION_JSON));
         User userFromResponse = new ObjectMapper().readValue(resultPositive.andReturn().getResponse().getContentAsByteArray(), User.class);
         Assert.assertEquals(id, userFromResponse.getId());
 
