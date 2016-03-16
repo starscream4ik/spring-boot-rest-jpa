@@ -18,6 +18,20 @@ public class User {
     public User() {
     }
 
+    public User(String name, String surname, String phoneNumber) {
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User(Long id, String name, String surname, String phoneNumber) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+    }
+
+
 
     public long getId() {
         return id;
