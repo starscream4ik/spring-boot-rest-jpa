@@ -37,7 +37,7 @@ public class UserControllerTest {
     private MockMvc mockMvc;
     private HttpMessageConverter mappingJackson2HttpMessageConverter;
 
-    private MediaType contentType = MediaType.APPLICATION_JSON_UTF8;
+    private MediaType contentType = MediaType.APPLICATION_JSON;
 
     @Before
     public void setUp() throws Exception {
