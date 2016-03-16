@@ -3,12 +3,11 @@ package com.levi.restboot.controller;
 import com.levi.restboot.entity.User;
 import com.levi.restboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/users")
 public class UserController {
 
@@ -45,9 +44,9 @@ public class UserController {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    public String deleteUser(@PathVariable Long id) {
+    @ResponseBody
+    public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
-        return "redirect:/users";
     }
 
     public UserService getUserService() {

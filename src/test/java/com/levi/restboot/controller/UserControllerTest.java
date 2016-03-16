@@ -81,7 +81,5 @@ public class UserControllerTest {
         resultPositive.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
         int contentLength = resultNegative.andReturn().getResponse().getContentLength();
         Assert.assertEquals(0, contentLength);
-
-
     }
 }
